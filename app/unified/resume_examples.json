@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ananya_sharma",
+    "name": "Ananya Sharma",
+    "role_hint": "Software Engineer",
+    "email": "ananya.sharma@example.invalid",
+    "location": "Bengaluru",
+    "preferred_location": "Bengaluru",
+    "shifts": "day",
+    "education": "B.Tech",
+    "certificates": "AWS Certified Developer",
+    "resume_text": "Ananya Sharma\nananya.sharma@example.invalid\nBengaluru\nB.Tech in Computer Science\n3 years of experience building Python services and SQL data pipelines.\nSkills: Python, SQL, Git, Docker, AWS, unit testing.\nCertificate: AWS Certified Developer.\nRecent work: Built a service that reduced report generation time by 35%."
+  },
+  {
+    "id": "rohan_mehta",
+    "name": "Rohan Mehta",
+    "role_hint": "Data Analyst",
+    "email": "rohan.mehta@example.invalid",
+    "location": "Hyderabad",
+    "preferred_location": "Hyderabad",
+    "shifts": "day",
+    "education": "BSc",
+    "certificates": "Google Data Analytics",
+    "resume_text": "Rohan Mehta\nrohan.mehta@example.invalid\nHyderabad\nBSc in Statistics\n2 years of experience in data analysis.\nSkills: SQL, Python, Excel, Power BI, Statistics.\nCertificate: Google Data Analytics.\nRecent work: Automated weekly sales reporting and improved data quality checks."
+  },
+  {
+    "id": "priya_nair",
+    "name": "Priya Nair",
+    "role_hint": "Backend Engineer",
+    "email": "priya.nair@example.invalid",
+    "location": "Pune",
+    "preferred_location": "Remote",
+    "shifts": "night",
+    "education": "B.E.",
+    "certificates": "",
+    "resume_text": "Priya Nair\npriya.nair@example.invalid\nPune\nB.E. in Information Technology\n5 years of experience designing backend systems.\nSkills: Python, APIs, SQL, Docker, Redis, Git.\nRecent work: Improved API latency by 28% and led an incident review process.\nAvailable for night shift and remote work."
+  }
+]

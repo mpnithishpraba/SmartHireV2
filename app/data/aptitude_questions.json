@@ -1,0 +1,529 @@
+{
+  "logical_reasoning": {
+    "easy": [
+      {
+        "id": "lr_e_001",
+        "question": "Find the next number in the series: 2, 6, 12, 20, ?",
+        "options": ["28", "30", "32", "36"],
+        "correct": "30",
+        "explanation": "Pattern: n(n+1): 1×2=2, 2×3=6, 3×4=12, 4×5=20, 5×6=30"
+      },
+      {
+        "id": "lr_e_002",
+        "question": "If APPLE is coded as BQQMF, how is MANGO coded?",
+        "options": ["NBPHQ", "NBQHP", "MBPHQ", "NCPHR"],
+        "correct": "NBPHQ",
+        "explanation": "Each letter is shifted by +1: M→N, A→B, N→O, G→H, O→P"
+      },
+      {
+        "id": "lr_e_003",
+        "question": "A is the brother of B. B is the sister of C. How is A related to C?",
+        "options": ["Brother", "Sister", "Father", "Uncle"],
+        "correct": "Brother",
+        "explanation": "A is male (brother of B) and B is sibling of C, so A is brother of C."
+      },
+      {
+        "id": "lr_e_004",
+        "question": "Which number is missing? 1, 4, 9, 16, ?, 36",
+        "options": ["20", "25", "24", "30"],
+        "correct": "25",
+        "explanation": "These are perfect squares: 1², 2², 3², 4², 5²=25, 6²"
+      },
+      {
+        "id": "lr_e_005",
+        "question": "If all Bloops are Razzies and all Razzies are Lazzies, then all Bloops are definitely Lazzies. True or False?",
+        "options": ["True", "False", "Cannot determine", "Sometimes"],
+        "correct": "True",
+        "explanation": "Transitive property: If A⊆B and B⊆C, then A⊆C."
+      }
+    ],
+    "medium": [
+      {
+        "id": "lr_m_001",
+        "question": "In a row of students, Ravi is 15th from the left and 20th from the right. How many students are there in total?",
+        "options": ["34", "35", "33", "36"],
+        "correct": "34",
+        "explanation": "Total = (Left position + Right position) - 1 = 15 + 20 - 1 = 34"
+      },
+      {
+        "id": "lr_m_002",
+        "question": "A clock shows 3:15. What is the angle between the hour and minute hands?",
+        "options": ["0°", "7.5°", "15°", "22.5°"],
+        "correct": "7.5°",
+        "explanation": "At 3:15, hour hand is at 3×30 + 15×0.5 = 97.5°. Minute hand is at 15×6 = 90°. Angle = 7.5°"
+      },
+      {
+        "id": "lr_m_003",
+        "question": "If 5 machines make 5 widgets in 5 minutes, how long would 100 machines take to make 100 widgets?",
+        "options": ["100 minutes", "5 minutes", "20 minutes", "1 minute"],
+        "correct": "5 minutes",
+        "explanation": "Each machine makes 1 widget in 5 minutes. 100 machines make 100 widgets in 5 minutes."
+      },
+      {
+        "id": "lr_m_004",
+        "question": "Pointing to a photograph, a man said, 'I have no brother or sister but that man's father is my father's son.' Whose photograph was it?",
+        "options": ["His own", "His son's", "His father's", "His nephew's"],
+        "correct": "His son's",
+        "explanation": "'My father's son' = himself (only child). So 'that man's father' = himself. The photo is of his son."
+      },
+      {
+        "id": "lr_m_005",
+        "question": "A train 125m long passes a man running at 5 km/hr in the same direction in 10 seconds. What is the speed of the train?",
+        "options": ["45 km/hr", "50 km/hr", "55 km/hr", "60 km/hr"],
+        "correct": "50 km/hr",
+        "explanation": "Relative speed = 125/10 = 12.5 m/s = 45 km/hr. Train speed = 45 + 5 = 50 km/hr."
+      }
+    ],
+    "hard": [
+      {
+        "id": "lr_h_001",
+        "question": "In a certain code, COMPUTER is written as RFUVQNPC. How is MEDICINE written?",
+        "options": ["EOJDEJFM", "EOJDJEFM", "NFEDJJOF", "MFEJDJOF"],
+        "correct": "EOJDJEFM",
+        "explanation": "Letters are reversed and each letter is shifted by +1: COMPUTER→RETUPMOC→RFUVQNPC"
+      },
+      {
+        "id": "lr_h_002",
+        "question": "Six people A, B, C, D, E, F sit around a circular table. A sits opposite B. C is between A and D. E is between B and F. Who sits opposite C?",
+        "options": ["E", "F", "D", "B"],
+        "correct": "F",
+        "explanation": "Arrangement: A-C-D-B-E-F (circular). C is opposite F."
+      },
+      {
+        "id": "lr_h_003",
+        "question": "If a giraffe is to a neck as a pelican is to a ___.",
+        "options": ["beak", "pouch", "fish", "water"],
+        "correct": "pouch",
+        "explanation": "A giraffe is known for its long neck; a pelican is known for its throat pouch."
+      },
+      {
+        "id": "lr_h_004",
+        "question": "Three boxes are mislabeled: 'Apples', 'Oranges', 'Mixed'. Each box contains only one type. By picking ONE fruit from ONE box, how do you correctly label all boxes?",
+        "options": [
+          "Pick from 'Mixed' box",
+          "Pick from 'Apples' box",
+          "Pick from 'Oranges' box",
+          "Cannot be determined"
+        ],
+        "correct": "Pick from 'Mixed' box",
+        "explanation": "Since all are mislabeled, the 'Mixed' box contains only one type. Pick from it and deduce the rest."
+      },
+      {
+        "id": "lr_h_005",
+        "question": "At what time between 4 and 5 o'clock are the hands of a clock at right angles?",
+        "options": [
+          "4:05 and 4:38",
+          "4:10 and 4:40",
+          "4:15 and 4:45",
+          "4:20 and 4:50"
+        ],
+        "correct": "4:05 and 4:38",
+        "explanation": "Hands are at 90° when minute hand is 15 min spaces apart. Calculate: ~4:05 and ~4:38."
+      }
+    ]
+  },
+  "quantitative_aptitude": {
+    "easy": [
+      {
+        "id": "qa_e_001",
+        "question": "What is 15% of 200?",
+        "options": ["25", "30", "35", "40"],
+        "correct": "30",
+        "explanation": "15% of 200 = (15/100) × 200 = 30"
+      },
+      {
+        "id": "qa_e_002",
+        "question": "If a shirt costs $80 after a 20% discount, what was the original price?",
+        "options": ["$90", "$96", "$100", "$110"],
+        "correct": "$100",
+        "explanation": "80% of original = $80, so original = $80/0.8 = $100"
+      },
+      {
+        "id": "qa_e_003",
+        "question": "The average of 5 numbers is 20. If one number is removed, the average becomes 18. What is the removed number?",
+        "options": ["26", "28", "30", "32"],
+        "correct": "28",
+        "explanation": "Sum of 5 = 100, sum of 4 = 72. Removed = 100 - 72 = 28"
+      },
+      {
+        "id": "qa_e_004",
+        "question": "A car travels 60 km in 1.5 hours. What is its speed?",
+        "options": ["30 km/hr", "35 km/hr", "40 km/hr", "45 km/hr"],
+        "correct": "40 km/hr",
+        "explanation": "Speed = Distance/Time = 60/1.5 = 40 km/hr"
+      },
+      {
+        "id": "qa_e_005",
+        "question": "If x + 5 = 12, what is x?",
+        "options": ["5", "6", "7", "8"],
+        "correct": "7",
+        "explanation": "x = 12 - 5 = 7"
+      }
+    ],
+    "medium": [
+      {
+        "id": "qa_m_001",
+        "question": "A sum of money doubles in 8 years at simple interest. What is the rate of interest?",
+        "options": ["10.5%", "11.5%", "12.5%", "13.5%"],
+        "correct": "12.5%",
+        "explanation": "SI = P, so P = P×R×8/100, R = 100/8 = 12.5%"
+      },
+      {
+        "id": "qa_m_002",
+        "question": "The ratio of boys to girls in a class is 3:5. If there are 24 boys, how many girls are there?",
+        "options": ["35", "38", "40", "42"],
+        "correct": "40",
+        "explanation": "3/5 = 24/x, x = 24×5/3 = 40"
+      },
+      {
+        "id": "qa_m_003",
+        "question": "A man buys an article for $50 and sells it for $65. What is his gain percent?",
+        "options": ["25%", "28%", "30%", "35%"],
+        "correct": "30%",
+        "explanation": "Gain = $15, Gain% = (15/50)×100 = 30%"
+      },
+      {
+        "id": "qa_m_004",
+        "question": "If the perimeter of a square is 48 cm, what is its area?",
+        "options": ["124 cm²", "136 cm²", "144 cm²", "156 cm²"],
+        "correct": "144 cm²",
+        "explanation": "Side = 48/4 = 12 cm. Area = 12² = 144 cm²"
+      },
+      {
+        "id": "qa_m_005",
+        "question": "A pipe can fill a tank in 6 hours. Another pipe can empty it in 8 hours. If both are opened together, how long to fill the tank?",
+        "options": ["20 hours", "22 hours", "24 hours", "26 hours"],
+        "correct": "24 hours",
+        "explanation": "Net rate = 1/6 - 1/8 = 1/24. Time = 24 hours."
+      }
+    ],
+    "hard": [
+      {
+        "id": "qa_h_001",
+        "question": "The compound interest on $5000 for 2 years at 10% p.a. compounded annually is:",
+        "options": ["$1000", "$1050", "$1100", "$1150"],
+        "correct": "$1050",
+        "explanation": "A = 5000(1+0.1)² = 6050. CI = 6050 - 5000 = $1050"
+      },
+      {
+        "id": "qa_h_002",
+        "question": "In how many ways can the letters of 'LEADER' be arranged?",
+        "options": ["320", "340", "360", "380"],
+        "correct": "360",
+        "explanation": "6 letters with E repeated: 6!/2! = 720/2 = 360"
+      },
+      {
+        "id": "qa_h_003",
+        "question": "A train travels 360 km at a uniform speed. If the speed had been 5 km/hr more, it would have taken 1 hour less. Find the original speed.",
+        "options": ["35 km/hr", "40 km/hr", "45 km/hr", "50 km/hr"],
+        "correct": "40 km/hr",
+        "explanation": "360/x - 360/(x+5) = 1. Solving: x = 40 km/hr"
+      },
+      {
+        "id": "qa_h_004",
+        "question": "Two dice are thrown. What is the probability of getting a sum greater than 9?",
+        "options": ["1/6", "5/18", "1/9", "7/18"],
+        "correct": "5/18",
+        "explanation": "Favorable: (4,6),(5,5),(5,6),(6,4),(6,5),(6,6) = 6 outcomes. P = 6/36 = 1/6... Actually: sum > 9 means 10,11,12: (4,6),(5,5),(6,4),(5,6),(6,5),(6,6) = 6. P = 6/36 = 1/6"
+      },
+      {
+        "id": "qa_h_005",
+        "question": "A and B together can do a work in 12 days. B and C together can do it in 15 days. A and C together in 20 days. In how many days can A alone do the work?",
+        "options": ["25 days", "30 days", "35 days", "40 days"],
+        "correct": "30 days",
+        "explanation": "A+B=1/12, B+C=1/15, A+C=1/20. Adding: 2(A+B+C)=1/12+1/15+1/20=1/5. A+B+C=1/10. A=1/10-1/15=1/30."
+      }
+    ]
+  },
+  "verbal_ability": {
+    "easy": [
+      {
+        "id": "va_e_001",
+        "question": "Choose the synonym of 'ABUNDANT':",
+        "options": ["Scarce", "Plentiful", "Rare", "Insufficient"],
+        "correct": "Plentiful",
+        "explanation": "Abundant means existing in large quantities — synonymous with plentiful."
+      },
+      {
+        "id": "va_e_002",
+        "question": "Identify the correctly spelled word:",
+        "options": ["Accomodation", "Accommodation", "Acommodation", "Acomodation"],
+        "correct": "Accommodation",
+        "explanation": "Correct spelling: Accommodation (double c, double m)."
+      },
+      {
+        "id": "va_e_003",
+        "question": "What is the antonym of 'BRAVE'?",
+        "options": ["Bold", "Fearless", "Cowardly", "Courageous"],
+        "correct": "Cowardly",
+        "explanation": "Cowardly is the opposite of brave."
+      },
+      {
+        "id": "va_e_004",
+        "question": "Fill in the blank: She ___ to school every day.",
+        "options": ["go", "goes", "going", "gone"],
+        "correct": "goes",
+        "explanation": "Third person singular requires 'goes'."
+      },
+      {
+        "id": "va_e_005",
+        "question": "Choose the correct passive voice: 'The cat chased the mouse.'",
+        "options": [
+          "The mouse was chased by the cat.",
+          "The mouse is chased by the cat.",
+          "The mouse were chased by the cat.",
+          "The mouse has chased by the cat."
+        ],
+        "correct": "The mouse was chased by the cat.",
+        "explanation": "Simple past active → simple past passive."
+      }
+    ],
+    "medium": [
+      {
+        "id": "va_m_001",
+        "question": "Choose the idiom meaning: 'Bite the bullet':",
+        "options": [
+          "To eat something hard",
+          "To endure a painful experience bravely",
+          "To shoot a gun",
+          "To avoid responsibility"
+        ],
+        "correct": "To endure a painful experience bravely",
+        "explanation": "'Bite the bullet' means to face a difficult situation with courage."
+      },
+      {
+        "id": "va_m_002",
+        "question": "Select the word that is most similar in meaning to 'PERNICIOUS':",
+        "options": ["Harmless", "Beneficial", "Harmful", "Innocent"],
+        "correct": "Harmful",
+        "explanation": "Pernicious means having a harmful effect."
+      },
+      {
+        "id": "va_m_003",
+        "question": "Identify the sentence with correct grammar:",
+        "options": [
+          "Each of the students have completed their assignment.",
+          "Each of the students has completed their assignment.",
+          "Each of the students have completed his assignment.",
+          "Each of the students has completed his assignments."
+        ],
+        "correct": "Each of the students has completed their assignment.",
+        "explanation": "'Each' is singular, so 'has' is correct. 'Their' is acceptable as a singular gender-neutral pronoun."
+      },
+      {
+        "id": "va_m_004",
+        "question": "Reading comprehension: 'The CEO's decision to downsize was met with ___.', Choose the best word:",
+        "options": ["Acclaim", "Apathy", "Outcry", "Indifference"],
+        "correct": "Outcry",
+        "explanation": "Downsizing typically causes negative reactions, so 'outcry' fits best."
+      },
+      {
+        "id": "va_m_005",
+        "question": "What does the phrase 'burning the midnight oil' mean?",
+        "options": [
+          "Wasting resources",
+          "Working late into the night",
+          "Starting a fire",
+          "Being wasteful"
+        ],
+        "correct": "Working late into the night",
+        "explanation": "It means to work late, especially studying or working on a project."
+      }
+    ],
+    "hard": [
+      {
+        "id": "va_h_001",
+        "question": "Choose the correct word: 'The politician's speech was full of ___ statements that confused the audience.'",
+        "options": ["Ambiguous", "Ambivalent", "Ambidextrous", "Ambitious"],
+        "correct": "Ambiguous",
+        "explanation": "Ambiguous means open to more than one interpretation — fits the context of confusion."
+      },
+      {
+        "id": "va_h_002",
+        "question": "Which figure of speech is used in: 'The wind whispered through the trees'?",
+        "options": ["Simile", "Metaphor", "Personification", "Hyperbole"],
+        "correct": "Personification",
+        "explanation": "Wind cannot literally whisper — human quality given to a non-human thing."
+      },
+      {
+        "id": "va_h_003",
+        "question": "Rearrange to form a coherent paragraph: (P) However, the results were inconclusive. (Q) The researchers conducted a series of experiments. (R) They decided to run additional trials. (S) The data suggested a possible correlation.",
+        "options": [
+          "QSPR",
+          "QPSR",
+          "SQPR",
+          "PQSR"
+        ],
+        "correct": "QSPR",
+        "explanation": "Logical flow: Experiments conducted → data suggested correlation → however inconclusive → decided to run more trials."
+      },
+      {
+        "id": "va_h_004",
+        "question": "Choose the word most opposite in meaning to 'SAGACIOUS':",
+        "options": ["Wise", "Foolish", "Clever", "Astute"],
+        "correct": "Foolish",
+        "explanation": "Sagacious means wise — foolish is the antonym."
+      },
+      {
+        "id": "va_h_005",
+        "question": "Identify the error: 'Neither the manager nor the employees was aware of the new policy.'",
+        "options": [
+          "Neither",
+          "nor",
+          "was",
+          "No error"
+        ],
+        "correct": "was",
+        "explanation": "When 'nor' connects subjects, the verb agrees with the nearer subject ('employees'). Should be 'were'."
+      }
+    ]
+  },
+  "domain_technical": {
+    "easy": [
+      {
+        "id": "dt_e_001",
+        "question": "What does HTML stand for?",
+        "options": [
+          "Hyper Text Markup Language",
+          "High Tech Modern Language",
+          "Hyper Transfer Markup Language",
+          "Home Tool Markup Language"
+        ],
+        "correct": "Hyper Text Markup Language",
+        "explanation": "HTML = HyperText Markup Language, used for structuring web pages."
+      },
+      {
+        "id": "dt_e_002",
+        "question": "Which data structure uses FIFO (First In, First Out)?",
+        "options": ["Stack", "Queue", "Array", "Tree"],
+        "correct": "Queue",
+        "explanation": "Queue processes elements in the order they were added — FIFO."
+      },
+      {
+        "id": "dt_e_003",
+        "question": "What is the time complexity of binary search?",
+        "options": ["O(n)", "O(log n)", "O(n²)", "O(n log n)"],
+        "correct": "O(log n)",
+        "explanation": "Binary search halves the search space each step — O(log n)."
+      },
+      {
+        "id": "dt_e_004",
+        "question": "Which SQL command is used to retrieve data from a table?",
+        "options": ["GET", "FETCH", "SELECT", "RETRIEVE"],
+        "correct": "SELECT",
+        "explanation": "SELECT is the SQL command to query data."
+      },
+      {
+        "id": "dt_e_005",
+        "question": "What is the primary key in a database?",
+        "options": [
+          "A key that unlocks data",
+          "A unique identifier for each record",
+          "The first column in any table",
+          "A foreign key reference"
+        ],
+        "correct": "A unique identifier for each record",
+        "explanation": "A primary key uniquely identifies each row in a table."
+      }
+    ],
+    "medium": [
+      {
+        "id": "dt_m_001",
+        "question": "What is the difference between a process and a thread?",
+        "options": [
+          "Processes are faster than threads",
+          "Threads share memory; processes have separate memory",
+          "Threads are more secure than processes",
+          "There is no difference"
+        ],
+        "correct": "Threads share memory; processes have separate memory",
+        "explanation": "Threads within a process share the same memory space; processes are isolated."
+      },
+      {
+        "id": "dt_m_002",
+        "question": "Which design pattern ensures a class has only one instance?",
+        "options": ["Factory", "Observer", "Singleton", "Strategy"],
+        "correct": "Singleton",
+        "explanation": "The Singleton pattern restricts instantiation to a single object."
+      },
+      {
+        "id": "dt_m_003",
+        "question": "In OOP, what is polymorphism?",
+        "options": [
+          "Hiding internal state of an object",
+          "Creating multiple objects from one class",
+          "The ability of different objects to respond to the same method in their own way",
+          "Inheriting from multiple classes"
+        ],
+        "correct": "The ability of different objects to respond to the same method in their own way",
+        "explanation": "Polymorphism allows methods to behave differently based on the object calling them."
+      },
+      {
+        "id": "dt_m_004",
+        "question": "What does an API endpoint return in a RESTful service?",
+        "options": ["HTML pages", "Binary data only", "Structured data (JSON/XML)", "SQL queries"],
+        "correct": "Structured data (JSON/XML)",
+        "explanation": "REST APIs return structured data, typically JSON or XML."
+      },
+      {
+        "id": "dt_m_005",
+        "question": "Which sorting algorithm has the best average-case time complexity?",
+        "options": ["Bubble Sort", "Insertion Sort", "Merge Sort", "Selection Sort"],
+        "correct": "Merge Sort",
+        "explanation": "Merge Sort has O(n log n) average and worst case — best among these options."
+      }
+    ],
+    "hard": [
+      {
+        "id": "dt_h_001",
+        "question": "What is the CAP theorem in distributed systems?",
+        "options": [
+          "Consistency, Availability, Partition Tolerance — pick two",
+          "Concurrency, Atomicity, Performance — pick two",
+          "Capacity, Accessibility, Privacy — all three required",
+          "Consistency, Accuracy, Performance — pick two"
+        ],
+        "correct": "Consistency, Availability, Partition Tolerance — pick two",
+        "explanation": "CAP theorem states a distributed system can only guarantee 2 of the 3 properties."
+      },
+      {
+        "id": "dt_h_002",
+        "question": "What is a race condition?",
+        "options": [
+          "When two processes compete for CPU time",
+          "When the outcome depends on the sequence/timing of uncontrollable events",
+          "When a program runs too fast",
+          "When memory is allocated incorrectly"
+        ],
+        "correct": "When the outcome depends on the sequence/timing of uncontrollable events",
+        "explanation": "Race conditions occur when behavior depends on timing of uncontrolled events."
+      },
+      {
+        "id": "dt_h_003",
+        "question": "In microservices architecture, what is the role of an API Gateway?",
+        "options": [
+          "Database management",
+          "Single entry point that routes requests to appropriate services",
+          "Code deployment",
+          "Monitoring only"
+        ],
+        "correct": "Single entry point that routes requests to appropriate services",
+        "explanation": "API Gateway acts as a reverse proxy, routing, composing, and managing cross-cutting concerns."
+      },
+      {
+        "id": "dt_h_004",
+        "question": "What is the space complexity of a recursive DFS on a binary tree of height h?",
+        "options": ["O(1)", "O(h)", "O(n)", "O(log n)"],
+        "correct": "O(h)",
+        "explanation": "DFS recursion uses call stack proportional to tree height h."
+      },
+      {
+        "id": "dt_h_005",
+        "question": "Which HTTP status code indicates 'I'm a teapot'?",
+        "options": ["418", "404", "500", "429"],
+        "correct": "418",
+        "explanation": "418 is an April Fools' RFC: 'I'm a teapot' — a teapot cannot brew coffee."
+      }
+    ]
+  }
+}

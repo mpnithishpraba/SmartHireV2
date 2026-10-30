@@ -1,0 +1,35 @@
+# Python environments and generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Local HR data and generated output
+app/unified/smarthire.sqlite3
+app/unified/backups/
+*.log
+
+# Large local inference assets are distributed separately from source control.
+app/models/
+
+# Historical code and local environments are kept only on the development machine.
+archive/
+
+# Editor and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# impeccable: platform binary (reinstall with npx impeccable install) and personal hook settings
+.claude/skills/impeccable/scripts/bin/
+.claude/settings.local.json
+
+# Local secrets (Groq API key)
+.env
+
+# AI design-tooling folders used during development; not needed to run SmartHire
+.claude/
+.impeccable/

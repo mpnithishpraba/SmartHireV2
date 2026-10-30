@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About SmartHire</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/static/fonts/libre-franklin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/app.css">
+  <style>
+    .about-top { background: var(--rail); color: var(--rail-text); }
+    .about-top-inner { max-width: 1080px; margin: 0 auto; padding: var(--s5) clamp(16px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: var(--s4); flex-wrap: wrap; }
+    .about-top .wordmark::after { display: none; }
+    .about-top a.back { color: var(--rail-muted); font-size: 13.5px; text-decoration: none; }
+    .about-top a.back:hover { color: var(--rail-text); text-decoration: underline; }
+    .about-hero { max-width: 1080px; margin: 0 auto; padding: var(--s7) clamp(16px, 4vw, 48px) var(--s5); }
+    .about-hero h1 { margin: 0; font-size: clamp(30px, 4.4vw, 44px); font-weight: 650; letter-spacing: -.025em; line-height: 1.1; max-width: 22ch; }
+    .about-hero h1::after { content: ""; display: block; width: 40px; height: 3px; margin-top: var(--s4); background: var(--rule); }
+    .about-hero p { margin: var(--s4) 0 0; max-width: 64ch; color: var(--ink-2); font-size: 16.5px; }
+    .about-nav { position: sticky; top: 0; z-index: 2; background: rgb(232 235 240 / .92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+    .about-nav ul { max-width: 1080px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); list-style: none; display: flex; gap: var(--s1); overflow-x: auto; scrollbar-width: none; }
+    .about-nav a { display: block; padding: 12px var(--s3); color: var(--ink-2); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
+    .about-nav a:hover { color: var(--ink); border-bottom-color: var(--line-strong); }
+    .about-nav a.on { color: var(--ink); border-bottom-color: var(--rule); }
+    main.about { max-width: 1080px; margin: 0 auto; padding: var(--s5) clamp(16px, 4vw, 48px) var(--s7); display: flex; flex-direction: column; gap: var(--s7); }
+    .about section { scroll-margin-top: 64px; }
+    .about h2 { margin: 0 0 var(--s2); font-size: 26px; font-weight: 650; letter-spacing: -.02em; }
+    .about .lede { margin: 0 0 var(--s5); max-width: 68ch; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--s4); }
+    .feature { border-top: 3px solid var(--tab, var(--primary)); }
+    .feature h3, .benefit h3 { margin: 0 0 6px; font-size: 16px; font-weight: 650; }
+    .feature p, .benefit p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .feature .who { display: inline-block; margin-bottom: var(--s2); font-size: 11px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .flow { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: var(--s3); }
+    .flow li { counter-increment: step; display: grid; grid-template-columns: 40px 1fr; gap: var(--s4); align-items: start; padding: var(--s4) var(--s5); background: var(--card); border: 1px solid var(--line); border-radius: var(--r); }
+    .flow li::before { content: counter(step); display: grid; place-items: center; width: 32px; height: 32px; border-radius: var(--r); background: var(--primary); color: #fff; font: 600 14px var(--mono); }
+    .flow h3 { margin: 4px 0 4px; font-size: 16px; font-weight: 650; }
+    .flow p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+    .flow .side { display: inline-block; margin-left: var(--s2); padding: 1px 7px; border-radius: 3px; font-size: 11.5px; font-weight: 600; vertical-align: 2px; }
+    .side.rec { background: #e7ecf6; color: var(--primary); }
+    .side.app { background: var(--ok-bg); color: var(--ok); }
+    .data-note { margin-top: var(--s4); }
+    .benefit { display: flex; gap: var(--s3); }
+    .benefit .mark { flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ok-bg); color: var(--ok); }
+    .table-card { padding: 0; overflow: hidden; }
+    .compare { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .compare th, .compare td { padding: 12px var(--s4); text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .compare thead th { background: var(--card-2); font-size: 12.5px; font-weight: 600; color: var(--muted); }
+    .compare tbody th { font-weight: 650; white-space: nowrap; }
+    .compare tr:last-child td, .compare tr:last-child th { border-bottom: 0; }
+    .compare tr.us { background: #eef1f7; }
+    .compare .eg { display: block; margin-top: 2px; font-size: 12.5px; font-weight: 400; color: var(--muted); }
+    .yes { color: var(--ok); font-weight: 600; }
+    .part { color: var(--warn); font-weight: 600; }
+    .fine { margin-top: var(--s3); font-size: 12.5px; color: var(--muted); max-width: 80ch; }
+    .grid.tech { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 960px) { .grid.tech { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .grid.tech { grid-template-columns: 1fr; } }
+    .tech h3 { margin: 0 0 var(--s3); font-size: 16px; font-weight: 650; padding-bottom: var(--s2); border-bottom: 1px solid var(--rule); }
+    .tech ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+    .tech li b { display: block; font-size: 14.5px; font-weight: 600; }
+    .tech li span { display: block; font-size: 13px; color: var(--muted); }
+    footer.about-foot { border-top: 1px solid var(--line); }
+    footer.about-foot div { max-width: 1080px; margin: 0 auto; padding: var(--s5) clamp(16px, 4vw, 48px); font-size: 13px; color: var(--muted); }
+    @media (max-width: 640px) { .flow li { grid-template-columns: 1fr; gap: var(--s2); padding: var(--s4); } }
+  </style>
+</head>
+<body>
+<header class="about-top">
+  <div class="about-top-inner">
+    <span class="wordmark">SmartHire</span>
+    <a class="back" href="/">← Back to the app</a>
+  </div>
+</header>
+
+<div class="about-hero">
+  <h1>One workspace from job opening to shortlist</h1>
+  <p>SmartHire brings role setup, resume screening, aptitude and coding tests, a structured interview and an identity check onto one candidate record, so recruiters compare applicants on the same evidence instead of across five tools.</p>
+</div>
+
+<nav class="about-nav" aria-label="About sections">
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#functionality">Functionality</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#market">Market availability</a></li>
+    <li><a href="#tech">Tech stack</a></li>
+  </ul>
+</nav>
+
+<main class="about">
+  <section id="features" aria-labelledby="h-feat">
+    <h2 id="h-feat">Features it offers</h2>
+    <p class="lede">Everything a small hiring team needs for an early-stage screen, split between what recruiters do and what applicants do.</p>
+    <div class="grid">
+      <article class="card feature" style="--tab: var(--primary)"><span class="who">Recruiters</span><h3>Roles and openings</h3><p>Create a role from a template or from scratch. Type required and preferred skills, or pull them from a job-description PDF or a CSV. Set scoring weights and test difficulty.</p></article>
+      <article class="card feature" style="--tab: var(--resume)"><span class="who">Recruiters</span><h3>Resume screening</h3><p>Every resume is scored against the role on skills, experience, education, certificates, location and shift, with the matching evidence quoted and missing details flagged for confirmation.</p></article>
+      <article class="card feature" style="--tab: var(--aptitude)"><span class="who">Applicants</span><h3>Aptitude test</h3><p>A timed multiple-choice test drawn from a local question bank at easy, medium or hard difficulty.</p></article>
+      <article class="card feature" style="--tab: var(--coding)"><span class="who">Applicants</span><h3>Coding test</h3><p>A coding problem run against hidden test cases on this computer, scored by the share of cases passed.</p></article>
+      <article class="card feature" style="--tab: var(--interview)"><span class="who">Applicants</span><h3>Structured interview</h3><p>Questions can be read aloud. Applicants type or speak their answers, and speech is transcribed locally with Whisper.</p></article>
+      <article class="card feature" style="--tab: var(--identity)"><span class="who">Applicants</span><h3>Identity check</h3><p>With consent, a webcam capture is compared with a reference photo. It returns match, no match or inconclusive, and is kept separate from the hiring score.</p></article>
+      <article class="card feature" style="--tab: var(--interview)"><span class="who">Recruiters</span><h3>Interview rating</h3><p>Rate each answer on a 0–4 rubric yourself, or let AI suggest ratings with a reason for each, then adjust and confirm them.</p></article>
+      <article class="card feature" style="--tab: var(--primary)"><span class="who">Recruiters</span><h3>Dashboard and shortlist</h3><p>Rank applicants by weighted overall score, select the top N or pick by hand, confirm the shortlist, and download a PDF report per applicant.</p></article>
+    </div>
+  </section>
+
+  <section id="functionality" aria-labelledby="h-func">
+    <h2 id="h-func">Functionality</h2>
+    <p class="lede">How SmartHire works, step by step. Each applicant moves through the same stages, and every result lands on one record.</p>
+    <ol class="flow">
+      <li><div><h3>Create a role <span class="side rec">Recruiter</span></h3><p>Define skills, experience, education, location and shift, and decide how much each counts toward the resume score.</p></div></li>
+      <li><div><h3>Apply to an opening <span class="side app">Applicant</span></h3><p>The role appears under Openings. The applicant clicks Apply now, adds a resume PDF or pastes it, and confirms location and shift.</p></div></li>
+      <li><div><h3>Automatic resume screen <span class="side rec">Recruiter</span></h3><p>SmartHire scores the resume against the role, shows the evidence for each criterion, and flags anything a recruiter should confirm.</p></div></li>
+      <li><div><h3>Take the assessments <span class="side app">Applicant</span></h3><p>Identity check, aptitude test, coding test and interview, in any order, all saved to the same record.</p></div></li>
+      <li><div><h3>Review and rate <span class="side rec">Recruiter</span></h3><p>Rate interview answers by hand or with AI suggestions. The overall score is resume, aptitude, coding and interview, each weighted (30 / 20 / 25 / 25 by default).</p></div></li>
+      <li><div><h3>Shortlist and report <span class="side rec">Recruiter</span></h3><p>Select the top applicants, confirm the shortlist, and share PDF reports with the hiring manager.</p></div></li>
+    </ol>
+    <p class="notice ok data-note"><span><strong>Where data goes.</strong> Roles, resumes, answers and scores are stored in a database on this computer. Speech transcription, the identity check and code runs also happen here, and camera frames are never saved. Only two optional features send text to Groq's AI service: AI interview rating, which sends the questions and answers, and skill extraction from a PDF, which sends the document text. Both are used only when a Groq key is set.</span></p>
+  </section>
+
+  <section id="benefits" aria-labelledby="h-ben">
+    <h2 id="h-ben">Benefits</h2>
+    <p class="lede">Why teams use one record instead of separate tools.</p>
+    <div class="grid">
+      <div class="card benefit"><span class="mark"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Faster screening</h3><p>Resumes are scored the moment they arrive, and the top applicants can be shortlisted in one step.</p></div></div>
+      <div class="card benefit"><span class="mark"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Fair, consistent scoring</h3><p>Every applicant for a role is measured on the same criteria and weights, with the evidence shown next to each score.</p></div></div>
+      <div class="card benefit"><span class="mark"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Humans stay in charge</h3><p>AI ratings are suggestions. Interview scores and shortlists count only after a recruiter confirms them.</p></div></div>
+      <div class="card benefit"><span class="mark"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Data stays with you</h3><p>Records live on your own computer, not in a vendor's cloud, which keeps privacy reviews simple.</p></div></div>
+      <div class="card benefit"><span class="mark"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Low cost</h3><p>No per-seat or per-candidate fees. The only optional running cost is the Groq AI service.</p></div></div>
+      <div class="card benefit"><span class="mark"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Clear audit trail</h3><p>Earlier ratings, confirmations and resets are kept with timestamps, and every applicant has a downloadable report.</p></div></div>
+    </div>
+  </section>
+
+  <section id="market" aria-labelledby="h-market">
+    <h2 id="h-market">Market availability</h2>
+    <p class="lede">Hiring software is usually sold as separate products. SmartHire covers the early-screening part of several of them in one place.</p>
+    <div class="card table-card">
+      <div class="table-wrap">
+        <table class="compare">
+          <thead><tr><th scope="col">Tool category</th><th scope="col">What it covers</th><th scope="col">Typically</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Applicant tracking systems<span class="eg">e.g. Workday, Greenhouse, Lever, Zoho Recruit</span></th><td>Job postings, applications, pipeline stages, resume parsing</td><td>Cloud subscription, priced per seat or per company</td></tr>
+            <tr><th scope="row">Skills assessment platforms<span class="eg">e.g. HackerRank, Codility, TestGorilla</span></th><td>Aptitude and coding tests with automatic scoring</td><td>Cloud subscription, often priced per candidate</td></tr>
+            <tr><th scope="row">Video interview tools<span class="eg">e.g. HireVue, Spark Hire</span></th><td>Recorded or live interviews, some with AI analysis</td><td>Cloud subscription</td></tr>
+            <tr><th scope="row">Proctoring and ID checks<span class="eg">e.g. Mercer Mettl, ProctorU</span></th><td>Identity and integrity checks during tests</td><td>Cloud, add-on or per-session pricing</td></tr>
+            <tr class="us"><th scope="row">SmartHire</th><td><span class="yes">One record:</span> openings, resume screening, aptitude, coding, interview, identity check, AI-assisted rating, shortlist and reports</td><td>Runs on your own computer. <span class="part">Early-stage screening only</span>: no job-board posting, offer letters or payroll</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="fine">Product names are examples of each category, not a feature-by-feature comparison. Check each vendor's current plans and pricing.</p>
+  </section>
+  <section id="tech" aria-labelledby="h-tech">
+    <h2 id="h-tech">Tech stack</h2>
+    <p class="lede">Built from open-source parts that run on an ordinary Windows computer, plus one optional cloud AI service.</p>
+    <div class="grid tech">
+      <div class="card"><h3>Backend</h3><ul>
+        <li><b>Python</b><span>Application language</span></li>
+        <li><b>Flask</b><span>Web server and API</span></li>
+        <li><b>SQLite</b><span>Local database for roles, applicants and results</span></li>
+      </ul></div>
+      <div class="card"><h3>Frontend</h3><ul>
+        <li><b>HTML, CSS, JavaScript</b><span>Plain web page, no framework</span></li>
+        <li><b>Browser media APIs</b><span>Webcam and microphone capture</span></li>
+        <li><b>Libre Franklin, JetBrains Mono</b><span>Bundled fonts</span></li>
+      </ul></div>
+      <div class="card"><h3>AI and machine learning</h3><ul>
+        <li><b>Groq API · gpt-oss-20b</b><span>AI interview rating and PDF skill extraction (optional, cloud)</span></li>
+        <li><b>faster-whisper (Whisper base)</b><span>Local speech-to-text for spoken answers</span></li>
+        <li><b>OpenCV SFace</b><span>Face comparison for the identity check</span></li>
+        <li><b>MediaPipe Face Landmarker</b><span>Face detection and head-movement check</span></li>
+      </ul></div>
+      <div class="card"><h3>Documents and media</h3><ul>
+        <li><b>PyPDF2</b><span>Reads resumes and job-description PDFs</span></li>
+        <li><b>ReportLab</b><span>Generates the PDF applicant reports</span></li>
+        <li><b>PyAV, NumPy</b><span>Decodes recorded audio and handles image data</span></li>
+        <li><b>Windows speech (System.Speech)</b><span>Reads interview questions aloud</span></li>
+      </ul></div>
+    </div>
+  </section>
+</main>
+
+<footer class="about-foot"><div>SmartHire · AI Recruitment Platform</div></footer>
+
+<script>
+  // Highlight the section in view in the sticky section bar.
+  const links = [...document.querySelectorAll('.about-nav a')];
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + entry.target.id));
+  }), {rootMargin: '-40% 0px -55% 0px'});
+  document.querySelectorAll('main.about section').forEach(section => observer.observe(section));
+</script>
+</body>
+</html>

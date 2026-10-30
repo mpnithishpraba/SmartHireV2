@@ -1,0 +1,8 @@
+SmartHire single-process local demo
+
+1. cd "Prototype\Prototype"
+2. python -m pip install -r requirements-local.txt
+3. python main.py
+4. Open http://127.0.0.1:5000
+
+After the initial package installation, no internet, API key, MongoDB, Ollama, or deployment is needed.

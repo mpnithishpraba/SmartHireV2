@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartHire</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/static/fonts/libre-franklin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<svg width="0" height="0" class="sprite" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.5h.01"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M20 15v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M18 11a6 6 0 0 1-12 0M12 17v4"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="m21 8-5 4 5 4z"/><rect x="3" y="6" width="13" height="12" rx="2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M19 8v6M16 11h6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M4 21h16M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><path d="M14 12h.01"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 12l2 2 4-4"/></symbol>
+</svg>
+
+<div class="shell">
+  <aside class="rail">
+    <div class="brand">
+      <h1><span class="wordmark">SmartHire</span><span class="sr-only"> — </span><span class="tagline">AI Recruitment Platform</span></h1>
+    </div>
+    <nav class="steps" id="nav" aria-label="Workflow">
+      <div class="nav-group" role="group" aria-labelledby="navRecruiters">
+        <p class="nav-label" id="navRecruiters">Recruiters</p>
+        <button data-page="jobs" class="active" aria-current="page"><span class="step-no"><svg class="i"><use href="#i-briefcase"/></svg></span><span class="step-name">Roles</span><span class="step-count" id="countJobs"></span></button>
+        <button data-page="dashboard"><span class="step-no"><svg class="i"><use href="#i-chart"/></svg></span><span class="step-name">Dashboard</span><span class="step-count" id="countCandidates"></span></button>
+      </div>
+      <div class="nav-group" role="group" aria-labelledby="navApplicants">
+        <p class="nav-label" id="navApplicants">Applicants</p>
+        <button data-page="openings"><span class="step-no"><svg class="i"><use href="#i-door"/></svg></span><span class="step-name">Openings</span><span class="step-count" id="countOpenings"></span></button>
+        <button data-page="candidates"><span class="step-no"><svg class="i"><use href="#i-user-plus"/></svg></span><span class="step-name">Candidate details</span></button>
+        <button data-page="assess"><span class="step-no"><svg class="i"><use href="#i-clipboard"/></svg></span><span class="step-name">Assessment</span></button>
+      </div>
+    </nav>
+    <button class="reset-all" id="resetAll" type="button"><svg class="i"><use href="#i-refresh"/></svg><span>Reset all progress</span></button>
+    <a class="rail-about" href="/static/about.html" target="_blank" rel="noopener"><svg class="i"><use href="#i-info"/></svg><span>About SmartHire</span><svg class="i ext"><use href="#i-external"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+  </aside>
+
+  <main class="work">
+    <!-- 1 · Roles -->
+    <section id="jobs" class="page active" aria-labelledby="jobsTitle">
+      <header class="page-head">
+        <div><h2 id="jobsTitle">Roles</h2><p>Define the evidence and preferences that matter for this job.</p></div>
+      </header>
+      <div class="split">
+        <form id="jobForm" class="card">
+          <div class="card-head"><h3>New role</h3></div>
+          <div class="templates">
+            <p class="field-label" id="templatesLabel">Start from a template</p>
+            <div id="rolePresets" class="template-row" role="group" aria-labelledby="templatesLabel"></div>
+          </div>
+
+          <fieldset>
+            <legend>The job</legend>
+            <div class="formgrid">
+              <div><label for="f-title">Job title</label><input id="f-title" name="title" placeholder="Software Engineer" required></div>
+              <div><label for="f-role">Role category</label><select id="f-role" name="role"><option value="swe">Software engineer</option><option value="backend">Backend</option><option value="ds">Data science</option><option value="ml">Machine learning</option><option value="data_eng">Data engineering</option><option value="general">General</option></select></div>
+              <div><label for="f-mode">Work arrangement</label><select id="f-mode" name="work_mode"><option value="onsite">Onsite</option><option value="hybrid">Hybrid</option><option value="remote">Remote</option></select></div>
+              <div><label for="f-loc">Work location</label><input id="f-loc" name="location" placeholder="Bengaluru"></div>
+              <div><label for="f-shift">Required shift</label><select id="f-shift" name="shift"><option value="day">Day</option><option value="night">Night</option><option value="rotating">Rotating</option></select></div>
+              <div class="checks">
+                <label class="check"><input name="location_required" type="checkbox">Location is mandatory</label>
+                <label class="check"><input name="shift_required" type="checkbox">Shift is mandatory</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Requirements</legend>
+            <div class="formgrid">
+              <div class="skill-source" data-target="f-req">
+                <label for="f-req">Required skills</label>
+                <div class="seg skill-mode" role="radiogroup" aria-label="Required skills input"><label><input type="radio" name="req_source" value="type" checked><span>Type</span></label><label><input type="radio" name="req_source" value="pdf"><span>Attach PDF</span></label><label><input type="radio" name="req_source" value="csv"><span>Attach CSV</span></label></div>
+                <input class="skill-file hidden" type="file" aria-label="Required skills file">
+                <textarea id="f-req" name="required_skills" placeholder="Python, SQL, Git"></textarea>
+              </div>
+              <div class="skill-source" data-target="f-pref">
+                <label for="f-pref">Preferred skills</label>
+                <div class="seg skill-mode" role="radiogroup" aria-label="Preferred skills input"><label><input type="radio" name="pref_source" value="type" checked><span>Type</span></label><label><input type="radio" name="pref_source" value="pdf"><span>Attach PDF</span></label><label><input type="radio" name="pref_source" value="csv"><span>Attach CSV</span></label></div>
+                <input class="skill-file hidden" type="file" aria-label="Preferred skills file">
+                <textarea id="f-pref" name="preferred_skills" placeholder="Docker, AWS"></textarea>
+              </div>
+              <div><label for="f-exp">Minimum experience (years)</label><input id="f-exp" name="min_experience" type="number" min="0" step="0.5" value="0"></div>
+              <div><label for="f-edu">Accepted education or equivalents</label><input id="f-edu" name="education" placeholder="B.Tech, B.E., Bachelor"></div>
+              <div class="full"><label for="f-cert">Relevant certificates</label><input id="f-cert" name="certificates" placeholder="AWS Certified Developer, PMP"></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Resume match weightage</legend>
+            <p class="help">How much each criterion counts toward the resume score. Weights must total 100.</p>
+            <div class="weights" id="weightFields"></div>
+            <p class="weight-total" id="weightTotal" aria-live="polite"></p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Assessment difficulty</legend>
+            <p class="help">Advanced coding uses a weighted shortest-path problem; advanced interviews ask more questions.</p>
+            <div class="difficulty-grid" id="difficultyFields"></div>
+          </fieldset>
+
+          <div class="form-foot"><button class="button" type="submit" id="saveRole">Save role</button></div>
+        </form>
+
+        <aside class="card side">
+          <div class="card-head"><h3>Saved roles</h3></div>
+          <div id="jobList" class="list"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Openings: roles applicants can apply to -->
+    <section id="openings" class="page" aria-labelledby="openTitle">
+      <header class="page-head">
+        <div><h2 id="openTitle">Openings</h2><p>Roles open for applications. Choose one and apply with your resume.</p></div>
+      </header>
+      <div id="openingList" class="openings"></div>
+    </section>
+
+    <!-- 2 · Add candidate -->
+    <section id="candidates" class="page" aria-labelledby="candTitle">
+      <header class="page-head">
+        <div><h2 id="candTitle">Add a candidate</h2><p>Upload a PDF or paste resume text, then confirm what a resume cannot reliably say.</p></div>
+      </header>
+      <div id="noRoleNotice" class="empty hidden">
+        <p><strong>Create a role first.</strong> Candidates are screened against a role's requirements.</p>
+        <button class="button secondary" type="button" data-goto="jobs">Go to roles</button>
+      </div>
+      <div class="split">
+        <form id="candidateForm" class="card">
+          <div class="card-head"><h3>Candidate details</h3></div>
+          <div id="applyBanner" class="notice ok apply-banner hidden" aria-live="polite"></div>
+          <fieldset>
+            <legend>Resume</legend>
+            <div class="formgrid">
+              <div><label for="candidateJob">Role</label><select name="job_id" id="candidateJob" required></select></div>
+              <div><label for="c-name">Candidate name</label><input id="c-name" name="name" placeholder="Name shown in reports"></div>
+              <div><label for="c-email">Email</label><input id="c-email" name="email" type="email" placeholder="Optional if on the resume"></div>
+              <div><label for="c-pdf">PDF resume</label><input id="c-pdf" name="resume" type="file" accept=".pdf,application/pdf"></div>
+              <div class="full"><label for="c-text">Or paste resume text</label><textarea id="c-text" name="resume_text" rows="6" placeholder="Paste the resume here for a fully offline walkthrough"></textarea></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Confirm with the candidate</legend>
+            <div class="formgrid">
+              <div><label for="c-loc">Current location</label><input id="c-loc" name="location" placeholder="Bengaluru"></div>
+              <div><label for="c-ploc">Preferred work location</label><input id="c-ploc" name="preferred_location" placeholder="Bengaluru"></div>
+              <div><label for="c-edu">Education or equivalent</label><input id="c-edu" name="education" placeholder="Optional"></div>
+              <div><label for="c-cert">Certificates held</label><input id="c-cert" name="certificates" placeholder="Optional"></div>
+              <div><label for="c-shift">Available shifts</label><select id="c-shift" name="shifts"><option value="">Needs confirmation</option><option value="day">Day</option><option value="night">Night</option><option value="rotating">Rotating</option><option value="flexible">Flexible</option><option value="day, night">Day and night</option></select></div>
+              <div class="checks"><label class="check"><input name="willing_to_relocate" type="checkbox">Willing to relocate</label></div>
+            </div>
+          </fieldset>
+          <div class="form-foot">
+            <p class="help">The PDF is parsed in memory. Extracted text and details are saved in the local SQLite database.</p>
+            <button class="button" type="submit" id="screenBtn">Screen candidate</button>
+          </div>
+        </form>
+        <aside class="card side">
+          <div class="card-head"><h3>Example resumes</h3></div>
+          <p class="help">Fictitious candidates for a quick walkthrough. Load one into the form, then pick a matching role.</p>
+          <div id="resumeExamples" class="list"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 3 · Assessment -->
+    <section id="assess" class="page" aria-labelledby="assessTitle">
+      <header class="page-head">
+        <div><h2 id="assessTitle">Assessment</h2><p>Hand the screen to the candidate for each test. Progress saves to the same record.</p></div>
+        <div class="head-control"><label for="assessmentCandidate">Candidate</label><select id="assessmentCandidate"></select></div>
+      </header>
+
+      <div id="assessEmpty" class="empty"></div>
+
+      <article id="record" class="record hidden">
+        <div class="tabs" role="tablist" id="stageTabs" aria-label="Assessment stages"></div>
+        <div class="card record-card">
+          <header class="record-head" id="recordHead"></header>
+
+          <div id="panel-resume" class="tabpanel" role="tabpanel" aria-labelledby="tab-resume">
+            <div id="assessmentDetail"></div>
+          </div>
+
+          <div id="panel-identity" class="tabpanel" role="tabpanel" aria-labelledby="tab-identity" hidden>
+            <div id="facePanel">
+              <p class="help measure">With the candidate's consent, add a reference photo. The local model draws a face box and compares three webcam frames while the candidate turns gently side to side. The score is cosine similarity, not a calibrated probability. Face data stays in memory until the app closes, and this check is separate from the hiring score.</p>
+              <div class="identity">
+                <div class="identity-steps">
+                  <div><label for="facePhoto">Reference photo</label><input id="facePhoto" type="file" accept="image/*"></div>
+                  <label class="check"><input id="faceConsent" type="checkbox">Candidate consent confirmed</label>
+                  <div class="actions"><button class="button secondary" id="faceEnroll" type="button">Add reference</button></div>
+                  <div class="actions"><button class="button secondary" id="faceCamera" type="button"><svg class="i"><use href="#i-camera"/></svg><span>Start camera</span></button><button class="button" id="faceVerify" type="button" disabled>Verify identity</button></div>
+                  <p id="faceStatus" class="status" data-state="pending">No check completed.</p>
+                  <p id="faceScore" class="figure-note"></p>
+                </div>
+                <div class="camera-stage"><video id="faceVideo" autoplay muted playsinline class="hidden"></video><div id="faceBox" class="face-box hidden"></div><p class="camera-idle">Camera off</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-aptitude" class="tabpanel" role="tabpanel" aria-labelledby="tab-aptitude" hidden>
+            <div id="aptitudeIntro"></div>
+            <div id="aptitudeLive" class="hidden">
+              <div class="test-bar"><h3 id="aptitudeTitle">Aptitude test</h3><span id="aptitudeTimer" class="timer" role="timer" aria-live="off"></span></div>
+              <div id="aptitudeQuestions"></div>
+              <div class="commit"><p class="help">Unanswered questions count as incorrect. You cannot change answers after submitting.</p><button class="button" id="aptitudeSubmit" type="button">Submit aptitude test</button></div>
+            </div>
+          </div>
+
+          <div id="panel-coding" class="tabpanel" role="tabpanel" aria-labelledby="tab-coding" hidden>
+            <div id="codingIntro"></div>
+            <div id="codingLive" class="hidden">
+              <h3 id="problemTitle">Coding challenge</h3>
+              <div id="problemDescription" class="problem"></div>
+              <label for="codeInput">Python solution</label>
+              <textarea id="codeInput" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+              <div class="commit">
+                <p class="notice warn"><svg class="i"><use href="#i-alert"/></svg><span>Local demo runner: the code runs on this computer with a time limit, but it is not a secure sandbox. Submit only code you trust.</span></p>
+                <button class="button" id="codingSubmit" type="button">Run test cases and submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-interview" class="tabpanel" role="tabpanel" aria-labelledby="tab-interview" hidden>
+            <div id="interviewIntro"></div>
+            <div id="interviewLive" class="hidden">
+              <div class="interviewer" id="interviewerAvatar">
+                <div class="voice" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                <div><strong>SmartHire interviewer</strong><p id="interviewProgress"></p></div>
+              </div>
+              <p class="question-text" id="interviewQuestion"></p>
+              <div class="actions">
+                <button class="button secondary" id="speakQuestion" type="button"><svg class="i"><use href="#i-speaker"/></svg><span>Play question aloud</span></button>
+                <button class="button secondary" id="cameraToggle" type="button"><svg class="i"><use href="#i-camera"/></svg><span>Turn camera on</span></button>
+                <button class="button secondary" id="recordToggle" type="button"><svg class="i"><use href="#i-mic"/></svg><span>Record answer</span></button>
+                <span id="recordStatus" class="record-status" aria-live="polite"></span>
+              </div>
+              <video id="interviewVideo" autoplay muted playsinline class="hidden preview"></video>
+              <p class="help">The camera preview stays in this browser. Video is not analysed or saved.</p>
+              <label for="interviewAnswer">Your answer</label>
+              <textarea id="interviewAnswer" rows="6" placeholder="Give a specific example and describe the outcome"></textarea>
+              <div class="commit"><button class="button" id="interviewNext" type="button">Submit answer</button></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4 · Dashboard -->
+    <section id="dashboard" class="page" aria-labelledby="dashTitle">
+      <header class="page-head">
+        <div><h2 id="dashTitle">Recruiter dashboard</h2><p>Scores, missing evidence and completed assessments for every candidate.</p></div>
+        <div class="head-control row">
+          <div><label for="dashboardJob">Role</label><select id="dashboardJob"></select></div>
+          <button class="button secondary icon-only" id="refreshBtn" type="button" aria-label="Refresh" title="Refresh"><svg class="i"><use href="#i-refresh"/></svg></button>
+        </div>
+      </header>
+      <div class="card flush">
+        <div class="shortlist-bar" id="shortlistBar">
+          <div class="shortlist-top">
+            <label for="topCount">Select top</label>
+            <input id="topCount" type="number" min="1" step="1" value="3" inputmode="numeric">
+            <span class="muted">applicants</span>
+            <button class="button secondary small" id="applyTop" type="button">Apply</button>
+          </div>
+          <p class="shortlist-count" id="shortlistCount" aria-live="polite"></p>
+          <div class="shortlist-actions">
+            <button class="button secondary small" id="clearSelection" type="button">Clear</button>
+            <button class="button small" id="confirmSelection" type="button"><svg class="i"><use href="#i-check"/></svg><span>Confirm selection</span></button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col" class="shortlist-col"><label class="check"><input type="checkbox" id="selectAllRows" aria-label="Select every candidate shown">Shortlist</label></th><th scope="col">Candidate</th><th scope="col">Role</th><th scope="col">Progress</th><th scope="col" class="num">Resume</th><th scope="col" class="num">Aptitude</th><th scope="col" class="num">Coding</th><th scope="col" class="num">Interview</th><th scope="col" class="num">Overall</th><th scope="col">Review</th></tr></thead>
+            <tbody id="candidateRows"></tbody>
+          </table>
+        </div>
+      </div>
+      <div id="analysisPanel" class="analysis hidden" aria-live="polite"></div>
+    </section>
+  </main>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

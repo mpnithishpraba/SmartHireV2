@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Software Engineer · Bengaluru",
+    "title": "Software Engineer",
+    "role": "swe",
+    "required_skills": "Python, SQL, Git",
+    "preferred_skills": "Docker, AWS",
+    "min_experience": 2,
+    "education": "B.Tech, B.E., Bachelor",
+    "certificates": "AWS Certified Developer",
+    "work_mode": "hybrid",
+    "location": "Bengaluru",
+    "shift": "day",
+    "difficulty": {"aptitude": 2, "coding": 2, "interview": 2}
+  },
+  {
+    "name": "Data Analyst · Hyderabad",
+    "title": "Data Analyst",
+    "role": "ds",
+    "required_skills": "SQL, Python, Excel",
+    "preferred_skills": "Power BI, Statistics",
+    "min_experience": 1,
+    "education": "Bachelor, BSc, B.Tech",
+    "certificates": "Google Data Analytics",
+    "work_mode": "onsite",
+    "location": "Hyderabad",
+    "shift": "day",
+    "difficulty": {"aptitude": 1, "coding": 1, "interview": 1}
+  },
+  {
+    "name": "Backend Engineer · Remote",
+    "title": "Backend Engineer",
+    "role": "backend",
+    "required_skills": "Python, APIs, SQL",
+    "preferred_skills": "Docker, Redis",
+    "min_experience": 4,
+    "education": "B.Tech, B.E., Bachelor",
+    "certificates": "",
+    "work_mode": "remote",
+    "location": "",
+    "shift": "night",
+    "difficulty": {"aptitude": 3, "coding": 3, "interview": 3}
+  }
+]

@@ -1,0 +1,368 @@
+{
+  "general": {
+    "introduction": [
+      {
+        "id": "gen_intro_001",
+        "question": "Tell me about yourself and your professional background.",
+        "category": "introduction",
+        "follow_ups": [
+          "What sparked your interest in this field?",
+          "How has your background prepared you for this role?"
+        ]
+      },
+      {
+        "id": "gen_intro_002",
+        "question": "Walk me through your resume and highlight key experiences.",
+        "category": "introduction",
+        "follow_ups": [
+          "Which experience was most impactful?",
+          "What skills did you develop in that role?"
+        ]
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "gen_beh_001",
+        "question": "Describe a time you faced a significant challenge at work. How did you handle it?",
+        "category": "behavioral",
+        "follow_ups": [
+          "What did you learn from that experience?",
+          "Would you approach it differently now?"
+        ]
+      },
+      {
+        "id": "gen_beh_002",
+        "question": "Tell me about a situation where you had to work with a difficult team member.",
+        "category": "behavioral",
+        "follow_ups": [
+          "How did you resolve the conflict?",
+          "What was the outcome?"
+        ]
+      },
+      {
+        "id": "gen_beh_003",
+        "question": "Give me an example of how you handle tight deadlines.",
+        "category": "behavioral",
+        "follow_ups": [
+          "How do you prioritize tasks?",
+          "What's your stress management approach?"
+        ]
+      }
+    ],
+    "cultural_fit": [
+      {
+        "id": "gen_cult_001",
+        "question": "What type of work environment do you thrive in?",
+        "category": "cultural_fit",
+        "follow_ups": [
+          "How do you contribute to team culture?",
+          "What management style works best for you?"
+        ]
+      },
+      {
+        "id": "gen_cult_002",
+        "question": "Where do you see yourself in 5 years?",
+        "category": "cultural_fit",
+        "follow_ups": [
+          "How does this role align with your goals?",
+          "What skills do you want to develop?"
+        ]
+      }
+    ],
+    "strengths_weaknesses": [
+      {
+        "id": "gen_sw_001",
+        "question": "What are your greatest strengths?",
+        "category": "strengths_weaknesses",
+        "follow_ups": [
+          "Can you give a specific example?",
+          "How have those strengths helped your team?"
+        ]
+      },
+      {
+        "id": "gen_sw_002",
+        "question": "What is an area you're actively working to improve?",
+        "category": "strengths_weaknesses",
+        "follow_ups": [
+          "What steps are you taking?",
+          "How has your progress been?"
+        ]
+      }
+    ]
+  },
+  "swe": {
+    "introduction": [
+      {
+        "id": "swe_intro_001",
+        "question": "Tell me about your software engineering background and what languages/frameworks you're most comfortable with.",
+        "category": "introduction",
+        "follow_ups": [
+          "How did you get started in software development?",
+          "What projects are you most proud of?"
+        ]
+      }
+    ],
+    "technical": [
+      {
+        "id": "swe_tech_001",
+        "question": "Explain the difference between REST and GraphQL. When would you use each?",
+        "category": "technical",
+        "follow_ups": [
+          "Have you built a GraphQL API before?",
+          "What are the trade-offs?"
+        ]
+      },
+      {
+        "id": "swe_tech_002",
+        "question": "How do you approach testing in your applications?",
+        "category": "technical",
+        "follow_ups": [
+          "What testing frameworks do you prefer?",
+          "How do you balance test coverage with development speed?"
+        ]
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "swe_beh_001",
+        "question": "Describe a bug that was particularly difficult to track down.",
+        "category": "behavioral",
+        "follow_ups": [
+          "How did you debug it?",
+          "What did you learn from the experience?"
+        ]
+      }
+    ],
+    "cultural_fit": [
+      {
+        "id": "swe_cult_001",
+        "question": "How do you stay updated with new technologies and industry trends?",
+        "category": "cultural_fit",
+        "follow_ups": [
+          "What's a recent tech trend you're excited about?",
+          "Do you contribute to open source?"
+        ]
+      }
+    ]
+  },
+  "ds": {
+    "introduction": [
+      {
+        "id": "ds_intro_001",
+        "question": "Tell me about your experience with data analysis and what tools you prefer.",
+        "category": "introduction",
+        "follow_ups": [
+          "What got you interested in data science?",
+          "What's your typical workflow?"
+        ]
+      }
+    ],
+    "technical": [
+      {
+        "id": "ds_tech_001",
+        "question": "How do you handle missing or inconsistent data in a dataset?",
+        "category": "technical",
+        "follow_ups": [
+          "What imputation methods do you use?",
+          "How do you decide if data should be dropped?"
+        ]
+      },
+      {
+        "id": "ds_tech_002",
+        "question": "Explain a machine learning model you've built from scratch.",
+        "category": "technical",
+        "follow_ups": [
+          "How did you evaluate its performance?",
+          "What features were most important?"
+        ]
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "ds_beh_001",
+        "question": "Describe a time your analysis led to a business decision.",
+        "category": "behavioral",
+        "follow_ups": [
+          "How did you present your findings?",
+          "What was the impact?"
+        ]
+      }
+    ],
+    "cultural_fit": [
+      {
+        "id": "ds_cult_001",
+        "question": "How do you explain complex statistical concepts to non-technical stakeholders?",
+        "category": "cultural_fit",
+        "follow_ups": [
+          "Can you give an example?",
+          "What visualization tools do you prefer?"
+        ]
+      }
+    ]
+  },
+  "ml": {
+    "introduction": [
+      {
+        "id": "ml_intro_001",
+        "question": "Describe your experience with machine learning and deep learning frameworks.",
+        "category": "introduction",
+        "follow_ups": [
+          "Which framework do you prefer and why?",
+          "What's the most complex model you've implemented?"
+        ]
+      }
+    ],
+    "technical": [
+      {
+        "id": "ml_tech_001",
+        "question": "How do you prevent overfitting in your models?",
+        "category": "technical",
+        "follow_ups": [
+          "What regularization techniques do you use?",
+          "How do you choose hyperparameters?"
+        ]
+      },
+      {
+        "id": "ml_tech_002",
+        "question": "Explain the bias-variance tradeoff.",
+        "category": "technical",
+        "follow_ups": [
+          "How do you find the right balance?",
+          "What metrics help diagnose the issue?"
+        ]
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "ml_beh_001",
+        "question": "Tell me about an ML project that didn't go as planned.",
+        "category": "behavioral",
+        "follow_ups": [
+          "What went wrong?",
+          "What did you learn?"
+        ]
+      }
+    ],
+    "cultural_fit": [
+      {
+        "id": "ml_cult_001",
+        "question": "How do you approach deploying ML models to production?",
+        "category": "cultural_fit",
+        "follow_ups": [
+          "What MLOps tools have you used?",
+          "How do you monitor model drift?"
+        ]
+      }
+    ]
+  },
+  "backend": {
+    "introduction": [
+      {
+        "id": "be_intro_001",
+        "question": "Tell me about your backend development experience and preferred tech stack.",
+        "category": "introduction",
+        "follow_ups": [
+          "Why did you choose that stack?",
+          "What's your experience with microservices?"
+        ]
+      }
+    ],
+    "technical": [
+      {
+        "id": "be_tech_001",
+        "question": "How do you design a scalable API?",
+        "category": "technical",
+        "follow_ups": [
+          "What authentication patterns do you prefer?",
+          "How do you handle rate limiting?"
+        ]
+      },
+      {
+        "id": "be_tech_002",
+        "question": "Explain database indexing and when you'd use it.",
+        "category": "technical",
+        "follow_ups": [
+          "What are the trade-offs?",
+          "How do you optimize a slow query?"
+        ]
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "be_beh_001",
+        "question": "Describe a system you designed that handles high traffic.",
+        "category": "behavioral",
+        "follow_ups": [
+          "What architectural decisions did you make?",
+          "How did you test scalability?"
+        ]
+      }
+    ],
+    "cultural_fit": [
+      {
+        "id": "be_cult_001",
+        "question": "How do you handle production incidents and outages?",
+        "category": "cultural_fit",
+        "follow_ups": [
+          "What's your debugging process?",
+          "How do you communicate with stakeholders?"
+        ]
+      }
+    ]
+  },
+  "data_eng": {
+    "introduction": [
+      {
+        "id": "de_intro_001",
+        "question": "Describe your experience building data pipelines and ETL processes.",
+        "category": "introduction",
+        "follow_ups": [
+          "What tools do you prefer?",
+          "What's the largest dataset you've worked with?"
+        ]
+      }
+    ],
+    "technical": [
+      {
+        "id": "de_tech_001",
+        "question": "How do you ensure data quality in your pipelines?",
+        "category": "technical",
+        "follow_ups": [
+          "What validation checks do you implement?",
+          "How do you handle data schema changes?"
+        ]
+      },
+      {
+        "id": "de_tech_002",
+        "question": "Explain the difference between batch and stream processing.",
+        "category": "technical",
+        "follow_ups": [
+          "When would you use each?",
+          "What frameworks have you used?"
+        ]
+      }
+    ],
+    "behavioral": [
+      {
+        "id": "de_beh_001",
+        "question": "Tell me about a data pipeline that broke in production.",
+        "category": "behavioral",
+        "follow_ups": [
+          "How did you diagnose the issue?",
+          "What safeguards did you add afterward?"
+        ]
+      }
+    ],
+    "cultural_fit": [
+      {
+        "id": "de_cult_001",
+        "question": "How do you collaborate with data scientists and analysts?",
+        "category": "cultural_fit",
+        "follow_ups": [
+          "What makes a good data platform?",
+          "How do you gather requirements?"
+        ]
+      }
+    ]
+  }
+}

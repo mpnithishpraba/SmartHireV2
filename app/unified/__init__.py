@@ -1,0 +1,1 @@
+"""Unified local SmartHire application."""
