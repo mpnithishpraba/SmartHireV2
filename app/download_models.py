@@ -6,6 +6,7 @@ Files that are already present are skipped, so it is safe to run again.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import urllib.request
 from pathlib import Path
@@ -58,6 +59,7 @@ def main():
         if any((path / "model.bin").exists() for path in snapshots.glob("*")):
             print("  already present")
         else:
+            os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")  # Windows copies files instead; harmless
             from huggingface_hub import snapshot_download  # installed with faster-whisper
             snapshot_download(WHISPER_REPO, cache_dir=str(args.models_dir))
             print("  done")
